@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Desapegos - Quero Doar</title>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;700&family=Tilt+Warp&display=swap" rel="stylesheet">
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="./js/checkAuth.js"></script>
+  </head>
+  <body>
+    <div class="site-wrap">
+      <!-- HEADER -->
+      <header class="header">
+        <div class="logo">desapegos</div>
+        <nav>
+          <a href="home.html">HOME</a>
+          <a href="doar.html" class="active">QUER DOAR?</a>
+          <a href="sobre.html">SOBRE NÓS</a>
+        </nav>
+        <div class="header-right">
+          <div class="search-box">
+            <input type="text" placeholder="Buscar..." />
+            <button><i class="fas fa-search"></i></button>
+          </div>
+          <!-- <i class="far fa-user"></i> -->
+          <a href="meus-favoritos.html">
+            <i class="far fa-heart"></i>
+          </a>
+          <a id="logout">
+            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+          </a>
+        </div>
+      </header>
+
+      <!-- FORM -->
+      <section class="form-section">
+        <h2>Cadastrar Item</h2>
+
+        <form class="item-form" enctype="multipart/form-data">
+          <input type="text" placeholder="Título do item" id="title" required />
+
+          <select name="category" id="category">
+            <option value="">Categoria</option>
+            <option value="0">Eletrônicos</option>
+            <option value="1">Eletrodomésticos</option>
+            <option value="2">Roupas e Acessórios</option>
+            <option value="3">Móveis</option>
+            <option value="4">Brinquedos</option>
+            <option value="5">Livros</option>
+            <option value="6">Material Escolar</option>
+            <option value="7">Esporte e Lazer</option>
+            <option value="8">Beleza</option>
+            <option value="9">Ferramentas</option>
+            <option value="10">Instrumentos Musicais</option>
+            <option value="11">Pet Shop</option>
+            <option value="12">Automotivo</option>
+            <option value="13">Informática</option>
+            <option value="14">Decoração</option>
+            <option value="15">Calçados</option>
+            <option value="16">Outros</option>
+          </select>
+
+          <select name="conservationStatus" id="conservationStatus">
+            <option value="">Estado</option>
+            <option value="0">Novo</option>
+            <option value="1">Seminovo</option>
+            <option value="2">Usado</option>
+            <option value="3">Danificado</option>
+          </select>
+
+          <input
+            type="text"
+            placeholder="Descrição curta"
+            id="description"
+            required
+          />
+          <div class="location">
+            <div>
+              <input
+                type="text"
+                placeholder="CEP"
+                id="cep"
+                maxlength="8"
+                pattern="\d{8}"
+              />
+              <button class="btn-secondary" id="get_cep">Buscar</button>
+            </div>
+            <input
+              type="text"
+              placeholder="Logradouro"
+              id="logradouro"
+              disabled
+              class="disabled"
+            />
+            <input
+              type="text"
+              placeholder="Bairro"
+              id="bairro"
+              disabled
+              class="disabled"
+            />
+            <input
+              type="text"
+              placeholder="Cidade"
+              id="cidade"
+              disabled
+              class="disabled"
+            />
+            <input
+              type="text"
+              placeholder="UF"
+              id="uf"
+              disabled
+              class="disabled"
+            />
+          </div>
+
+          <label>Imagem:</label>
+          <input type="file" id="image" name="image" accept="image/*" />
+
+          <button type="submit" class="btn-submit" id="add_item">
+            DESAPEGAR
+          </button>
+        </form>
+      </section>
+
+      <!-- FOOTER -->
+      <footer class="footer">
+        <div class="logo">desapegos</div>
+        <p>© 2025 Desapegos. Todos os direitos reservados.</p>
+      </footer>
+    </div>
+
+    <script type="module" src="./js/ads/createAd.js"></script>
+    <script type="module" src="./js/ads/getCep.js"></script>
+    <script src="./js/users/logout.js"></script>
+  </body>
+</html>

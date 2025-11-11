@@ -1,0 +1,20 @@
+export const categorias = {
+  0: "Eletrônicos",
+  1: "Eletrodomésticos",
+  2: "Roupas e Acessórios",
+  3: "Móveis",
+  4: "Brinquedos",
+  5: "Livros",
+  6: "Material Escolar",
+  7: "Esporte e Lazer",
+  8: "Beleza",
+  9: "Ferramentas",
+  10: "Instrumentos Musicais",
+  11: "Pet Shop",
+  12: "Automotivo",
+  13: "Informática",
+  14: "Decoração",
+  15: "Calçados",
+  16: "Outros",
+};
+

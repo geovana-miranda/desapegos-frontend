@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Desapegos - Login</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;700&family=Tilt+Warp&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section class="form-section">
+      <h2>Login</h2>
+      <p>Não tem uma conta? <a href="cadastro.html">Cadastre-se</a></p>
+
+      <div class="error"><p id="msg_error">Usuário ou senha inválido.</p></div>
+
+      <form class="item-form">
+        <input type="email" placeholder="Email" id="email" />
+        <input type="password" placeholder="Senha" id="password" />
+        <button type="submit" class="btn-submit" id="login">ENTRAR</button>
+      </form>
+    </section>
+    <div id="g_btn_container" class="google-login"></div>
+
+    <script type="module" src="./js/users/login.js"></script>
+    <script
+      id="gsi"
+      src="https://accounts.google.com/gsi/client"
+      async
+      defer
+    ></script>
+
+    <script>
+
+    </script>
+  </body>
+</html>

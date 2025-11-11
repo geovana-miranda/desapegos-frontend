@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Desapegos - Conversas</title>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;700&family=Tilt+Warp&display=swap" rel="stylesheet">
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <script src="./js/checkAuth.js"></script>
+    <script type="module" src="./js/conversations/conversations.js"></script>
+    <script
+      type="module"
+      src="./js/conversations/getUnreadMessages.js"
+    ></script>
+  </head>
+  <body>
+    <div class="site-wrap">
+      <!-- HEADER -->
+      <header class="header">
+        <div class="logo">desapegos</div>
+        <nav>
+          <a href="home.html" class="active">HOME</a>
+          <a href="doar.html">QUER DOAR?</a>
+          <a href="sobre.html">SOBRE NÓS</a>
+        </nav>
+        <div class="header-right">
+          <div class="search-box">
+            <input type="text" placeholder="Buscar..." />
+            <button><i class="fas fa-search"></i></button>
+          </div>
+          <!-- <i class="far fa-user"></i> -->
+          <a href="meus-favoritos.html">
+            <i class="far fa-heart"></i>
+          </a>
+
+          <a href="conversas.html" class="icone-mensagens-container">
+            <i class="far fa-envelope" title="Conversas"></i>
+          </a>
+
+          <a id="logout">
+            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+          </a>
+        </div>
+      </header>
+
+      <main class="conversas">
+        <h1>Conversas</h1>
+
+        <p class="no-msgs">Você ainda não tem nenhuma conversa em aberto.</p>
+
+        <section class="conversas-content hidden">
+          <div class="sidebar"></div>
+
+          <div class="chat-area">
+            <p class="chat-titulo"></p>
+            <div class="messages"></div>
+
+            <div class="chat-input hidden">
+              <form>
+                <input
+                  type="text"
+                  id="text"
+                  placeholder="Digite sua mensagem..."
+                />
+                <input type="hidden" id="anuncioId" value="" />
+                <input type="hidden" id="conversaId" value="" />
+                <button class="btn-msg">Enviar</button>
+              </form>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- FOOTER -->
+      <footer class="footer">
+        <div class="logo">desapegos</div>
+        <p>© 2025 Desapegos. Todos os direitos reservados.</p>
+      </footer>
+    </div>
+
+    <script type="module" src="./js/conversations/sendMsg.js"></script>
+    <script src="./js/users/logout.js"></script>
+  </body>
+</html>

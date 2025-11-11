@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Denunciar Produto | Desapegos</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;700&family=Tilt+Warp&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="./js/checkAuth.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="logo">desapegos</div>
+      <nav>
+        <a href="home.html" class="active">HOME</a>
+        <a href="doar.html">QUER DOAR?</a>
+        <a href="sobre.html">SOBRE NÓS</a>
+      </nav>
+      <div class="header-right">
+        <div class="search-box">
+          <input type="text" placeholder="Buscar..." />
+          <button><i class="fas fa-search"></i></button>
+        </div>
+        <!-- <i class="far fa-user"></i> -->
+        <a href="meus-favoritos.html">
+          <i class="far fa-heart"></i>
+        </a>
+
+        <a href="conversas.html" class="icone-mensagens-container">
+          <i class="far fa-envelope" title="Conversas"></i>
+        </a>
+
+        <a id="logout">
+          <i class="fa-solid fa-arrow-right-from-bracket"></i>
+        </a>
+      </div>
+    </header>
+
+    <main class="conteudo">
+      <section class="form-section">
+        <h2>Denunciar Produto</h2>
+
+        <form class="form-denuncia">
+          <p id="produto"></p>
+          <label for="motivo">Motivo da denúncia</label>
+          <textarea
+            id="motivo"
+            name="motivo"
+            rows="5"
+            placeholder="Descreva o motivo da denúncia..."
+            required
+          ></textarea>
+          <div id="motivo"></div>
+          <button type="submit" class="btn-enviar" id="denunciar">
+            <i class="fas fa-flag"></i> Enviar Denúncia
+          </button>
+        </form>
+      </section>
+    </main>
+
+    <footer class="rodape">
+      <div class="logo">desapegos</div>
+      <nav>
+        <a href="index.html">HOME</a>
+        <a href="#">QUER DOAR?</a>
+        <a href="#">SOBRE NÓS</a>
+        <a href="#">CONTATO</a>
+      </nav>
+      <p>© 2025 Desapegos. Todos os direitos reservados.</p>
+    </footer>
+    <script type="module" src="./js/denuncia/formDenuncia.js"></script>
+  </body>
+</html>

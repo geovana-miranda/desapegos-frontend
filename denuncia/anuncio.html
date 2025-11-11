@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anúncios Denunciados | Desapegos</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;700&family=Tilt+Warp&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../style.css" />
+    <script src="../js/checkAuth.js"></script>
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="logo">desapegos</div>
+      <nav>
+        <a href="../home-admin.html">HOME</a>
+      </nav>
+      <div class="header-right">
+        <a id="logout">
+          <i class="fa-solid fa-arrow-right-from-bracket"></i>
+        </a>
+      </div>
+    </header>
+
+    <main class="anuncio">
+      <div class="anuncio-content">
+        <h1 id="item-nome">Carregando...</h1>
+        <div id="status">
+          <p id="item-status"></p>
+        </div>
+        <div class="main-image" id="main-image"></div>
+        <p id="item-info"></p>
+        <div class="container-localizacao">
+          <p>Descrição:</p>
+          <p id="item-descricao"></p>
+        </div>
+        <div class="container-localizacao">
+          <p>Localização:</p>
+          <p id="item-localizacao"></p>
+        </div>
+        <div class="anunciante">
+          <div class="avatar">
+            <img src="../img/user-no-img.png" alt="foto do usuário" />
+          </div>
+          <span id="anunciante-nome"></span>
+        </div>
+
+        <button id="analisar" class="btn-primary">Analisar</button>
+      </div>
+    </main>
+
+    <script type="module" src="../js/ads/adDetails.js"></script>
+    <script src="../js/users/logout.js"></script>
+  </body>
+</html>

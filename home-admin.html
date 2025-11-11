@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anúncios Denunciados | Desapegos</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;700&family=Tilt+Warp&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="./js/checkAuth.js"></script>
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="logo">desapegos</div>
+      <nav>
+        <a href="home-admin.html">HOME</a>
+      </nav>
+      <div class="header-right">
+        <a id="logout">
+          <i class="fa-solid fa-arrow-right-from-bracket"></i>
+        </a>
+      </div>
+    </header>
+
+    <main class="conteudo">
+      <h2>Anúncios Denunciados</h2>
+
+      <table class="tabela">
+        <thead>
+          <tr>
+            <th>Usuário Denunciado</th>
+            <th>Anúncio</th>
+            <th>Motivo</th>
+            <th>Status</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="denuncias-body"></tbody>
+      </table>
+    </main>
+
+    <footer class="rodape">
+      <div class="logo">desapegos</div>
+      <nav>
+        <a href="index.html">HOME</a>
+        <a href="#">QUER DOAR?</a>
+        <a href="#">SOBRE NÓS</a>
+        <a href="#">CONTATO</a>
+      </nav>
+      <p>© 2025 Desapegos. Todos os direitos reservados.</p>
+    </footer>
+
+    <script type="module" src="./js/denuncia/getDenuncias.js"></script>
+    <script src="./js/users/logout.js"></script>
+  </body>
+</html>

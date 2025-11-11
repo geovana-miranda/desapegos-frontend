@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anúncio - Desapegos</title>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;700&family=Tilt+Warp&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+
+  <script src="./js/checkAuth.js"></script>
+  <script type="module" src="./js/ads/adDetails.js"></script>
+</head>
+
+<body>
+  <div class="site-wrap">
+    <!-- HEADER -->
+    <header class="header">
+      <div class="logo">desapegos</div>
+      <nav>
+        <a href="home.html">HOME</a>
+        <a href="doar.html" class="active">QUER DOAR?</a>
+        <a href="sobre.html">SOBRE NÓS</a>
+      </nav>
+      <div class="header-right">
+        <div class="search-box">
+          <input type="text" placeholder="Buscar..." />
+          <button><i class="fas fa-search"></i></button>
+        </div>
+        <!-- <i class="far fa-user"></i> -->
+        <a href="meus-favoritos.html">
+          <i class="far fa-heart"></i>
+        </a>
+        <a href="conversas.html" class="icone-mensagens-container">
+          <i class="far fa-envelope" title="Conversas"></i>
+        </a>
+
+        <a id="logout">
+          <i class="fa-solid fa-arrow-right-from-bracket"></i>
+        </a>
+      </div>
+    </header>
+
+    <!-- Anúncio Section -->
+    <main class="anuncio">
+      <div class="anuncio-content">
+        <h1 id="item-nome">Carregando...</h1>
+
+        <div id="status">
+          <p id="item-status"></p>
+        </div>
+
+        <div class="main-image" id="main-image"></div>
+        <p id="item-info"></p>
+
+        <div class="fav-btn">
+          <i class="far fa-heart fav"></i>
+          <span class="fav-text"> FAVORITAR </span>
+        </div>
+
+        <div class="report-btn" id="btn-denuncia">
+          <i class="fas fa-flag report-icon"></i>
+          <span class="report-text">DENUNCIAR PRODUTO</span>
+        </div>
+
+
+        <div class="container-localizacao">
+          <p>Descrição:</p>
+          <p id="item-descricao"></p>
+        </div>
+
+        <div class="container-localizacao">
+          <p>Localização:</p>
+          <p id="item-localizacao"></p>
+        </div>
+
+        <button class="btn-primary" style="cursor: default;">QUERO!</button>
+
+        <div class="anunciante">
+          <div class="avatar">
+            <img src="./img/user-no-img.png" alt="foto do usuário" />
+          </div>
+          <span id="anunciante-nome"></span>
+        </div>
+
+        <div class="mensagem">
+          <p>Envie uma mensagem para saber mais</p>
+          <form>
+            <input type="hidden" id="anuncioId" name="anuncioId" />
+
+            <textarea id="text" rows="5" placeholder="Digite sua mensagem..."></textarea>
+            <input type="submit" value="Enviar" class="btn-msg" />
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="logo">desapegos</div>
+      <p>© 2025 Desapegos. Todos os direitos reservados.</p>
+    </footer>
+  </div>
+
+  <script type="module" src="./js/conversations/sendMsg.js"></script>
+  <script src="./js/users/logout.js"></script>
+</body>
+
+</html>
