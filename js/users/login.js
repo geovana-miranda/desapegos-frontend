@@ -48,28 +48,11 @@ async function handleLogin(e) {
     return;
   }
 
-  const prev = btnLogin?.innerText;
-  if (btnLogin) {
-    btnLogin.disabled = true;
-    btnLogin.innerText = "Entrando...";
-  }
+  const res = await login({ email, senha });
 
-  try {
-    const res = await login({ email, senha });
-
-    if (!res.ok) {
-      showError(res.error || "E-mail ou senha inválidos.");
-      return;
-    }
-    localStorage.setItem("token", res.jwtToken);
-    window.location.href = REDIRECT_AFTER_LOGIN;
-  } catch (err) {
-    showError("Falha ao entrar. Tente novamente.");
-  } finally {
-    if (btnLogin) {
-      btnLogin.disabled = false;
-      btnLogin.innerText = prev || "ENTRAR";
-    }
+  if (!res.ok) {
+    showError(res.error || "E-mail ou senha inválidos.");
+    return;
   }
 }
 
@@ -88,7 +71,7 @@ function initGoogle() {
   });
 
   const container = document.getElementById("g_btn_container");
-  container.innerHTML = ""; 
+  container.innerHTML = "";
   google.accounts.id.renderButton(container, {
     theme: "outline",
     size: "large",
@@ -98,4 +81,3 @@ function initGoogle() {
     width: 320,
   });
 }
-

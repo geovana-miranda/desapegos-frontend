@@ -123,28 +123,33 @@ export async function AddNewAd(newAd) {
   try {
     const token = localStorage.getItem("token");
 
-    const formData = new FormData();
-
-    formData.append("titulo", newAd.titulo);
-    formData.append("descricao", newAd.descricao);
-    formData.append("categoria", newAd.categoria);
-    formData.append("estadoConservacao", newAd.estadoConservacao);
-    formData.append("cep", newAd.cep);
-    formData.append("logradouro", newAd.logradouro);
-    formData.append("bairro", newAd.bairro);
-    formData.append("localidade", newAd.localidade);
-    formData.append("uf", newAd.uf);
+    let imagemBase64 = null;
 
     if (newAd.imagem) {
-      formData.append("imagemUpload", newAd.imagem);
+      imagemBase64 = await fileToBase64(newAd.imagem);
+      imagemBase64 = imagemBase64.split(",")[1];
     }
+
+    const ad = {
+      titulo: newAd.titulo,
+      descricao: newAd.descricao,
+      categoria: newAd.categoria,
+      estadoConservacao: newAd.estadoConservacao,
+      cep: newAd.cep,
+      logradouro: newAd.logradouro,
+      bairro: newAd.bairro,
+      localidade: newAd.localidade,
+      uf: newAd.uf,
+      imagemBase64: imagemBase64,
+    };
 
     const res = await fetch(`${URL}`, {
       method: "POST",
       headers: {
+        "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
       },
-      body: formData,
+      body: JSON.stringify(ad),
     });
 
     if (!res.ok) {
@@ -157,6 +162,15 @@ export async function AddNewAd(newAd) {
     console.error("Erro ao adicionar anúncio:", error);
     return null;
   }
+}
+
+function fileToBase64(file) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => resolve(reader.result);
+    reader.onerror = (err) => reject(err);
+    reader.readAsDataURL(file);
+  });
 }
 
 export async function deleteAd(id) {
@@ -186,30 +200,34 @@ export async function updateAd(id, updatedAd) {
   try {
     const token = localStorage.getItem("token");
 
-    const formData = new FormData();
-
-    formData.append("id", id);
-    formData.append("titulo", updatedAd.titulo);
-    formData.append("descricao", updatedAd.descricao);
-    formData.append("categoria", updatedAd.categoria);
-    formData.append("estadoConservacao", updatedAd.estadoConservacao);
-    formData.append("cep", updatedAd.cep);
-    formData.append("logradouro", updatedAd.logradouro);
-    formData.append("bairro", updatedAd.bairro);
-    formData.append("localidade", updatedAd.localidade);
-    formData.append("uf", updatedAd.uf);
-    formData.append("status", updatedAd.status);
+    let imagemBase64 = null;
 
     if (updatedAd.imagem) {
-      formData.append("imagemUpload", updatedAd.imagem);
+      imagemBase64 = await fileToBase64(updatedAd.imagem);
+      imagemBase64 = imagemBase64.split(",")[1];
     }
+
+    const ad = {
+      id,
+      titulo: updatedAd.titulo,
+      descricao: updatedAd.descricao,
+      categoria: updatedAd.categoria,
+      estadoConservacao: updatedAd.estadoConservacao,
+      cep: updatedAd.cep,
+      logradouro: updatedAd.logradouro,
+      bairro: updatedAd.bairro,
+      localidade: updatedAd.localidade,
+      uf: updatedAd.uf,
+      imagemBase64: imagemBase64,
+    };
 
     const res = await fetch(`${URL}/${id}`, {
       method: "PUT",
       headers: {
+        "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
       },
-      body: formData,
+      body: JSON.stringify(ad),
     });
 
     if (!res.ok) {

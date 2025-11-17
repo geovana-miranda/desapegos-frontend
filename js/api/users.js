@@ -1,6 +1,6 @@
 import { URL_BASE } from "./apiConfig.js";
 
-const URL = `${URL_BASE}/usuarios`
+const URL = `${URL_BASE}/usuarios`;
 
 export async function createUser(user) {
   try {
@@ -74,7 +74,6 @@ function redirecionarPorPerfil(token) {
 
   if (role === "Usuario") {
     alert("Usuário logado com sucesso!");
-
     window.location.href = "home.html";
   } else {
     alert("Administrador logado com sucesso!");

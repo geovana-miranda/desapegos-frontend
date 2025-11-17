@@ -67,29 +67,29 @@ body {
 
 /* ===== Search Box ===== */
 .search-box {
-  display: flex;
-  align-items: center;
+  display: none;
+  /* align-items: center;
   border: 1px solid #ddd;
   padding: 6px 10px;
   border-radius: 20px;
-  background: #f8f8f8;
+  background: #f8f8f8; */
 }
 
-.search-box input {
+/* .search-box input {
   border: none;
   outline: none;
   background: transparent;
   font-family: "Sora", sans-serif;
   font-size: 14px;
-}
+} */
 
-.search-box button {
+/* .search-box button {
   border: none;
   background: none;
   cursor: pointer;
   font-size: 14px;
   color: #666;
-}
+} */
 
 /* ===== Hero ===== */
 .hero {
@@ -265,7 +265,7 @@ select {
 
 .item-form label {
   font-size: 14px;
-  font-family: "Tilt Warp", sans-serif
+  font-family: "Tilt Warp", sans-serif;
 }
 
 .item-form .location {
@@ -300,7 +300,7 @@ select {
 }
 
 .about-section h2 {
-    font-family: "Tilt Warp", sans-serif;
+  font-family: "Tilt Warp", sans-serif;
   margin-bottom: 20px;
 }
 
@@ -780,7 +780,8 @@ select {
 .google-login a::before {
   content: "";
   display: inline-block;
-  background: url("https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg") no-repeat center;
+  background: url("https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg")
+    no-repeat center;
   background-size: 20px;
   width: 20px;
   height: 20px;
@@ -792,3 +793,80 @@ select {
   border-color: #c6c6c6;
 }
 
+@media (max-width: 900px) {
+  .hero {
+    gap: 20px;
+    padding: 20px;
+    margin: 20px;
+  }
+
+  .hero-text {
+    max-width: 60%;
+  }
+
+  .hero-text h2 {
+    font-size: 28px;
+  }
+
+  .hero-image img {
+    max-width: 400px;
+  }
+
+  .header {
+    padding: 18px 20px;
+  }
+
+  .header nav {
+    gap: 25px;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+    padding: 30px 20px;
+    margin: 15px;
+  }
+
+  .hero-text {
+    max-width: 100%;
+  }
+
+  .hero-text h2 {
+    font-size: 24px;
+  }
+
+  .hero-text p {
+    font-size: 13px;
+  }
+
+  .hero-image img {
+    max-width: 300px;
+  }
+
+   .header {
+    flex-direction: column;
+    gap: 15px;
+    padding: 16px 20px;
+    text-align: center;
+  }
+
+  .header nav {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .header-right {
+    gap: 14px;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  .header nav a {
+    font-size: 14px;
+  }
+}

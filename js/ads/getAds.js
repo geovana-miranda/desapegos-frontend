@@ -23,9 +23,11 @@ async function carregarAds() {
 
   if (ads.length >= 1) {
     ads.forEach((ad) => {
+
+      
       const image = !ad.imagem
         ? "/img/no_image.png"
-        : `https://localhost:7155${ad.imagem}`;
+        : `data:image/*;base64,${ad.imagem}`;
 
       const card = document.createElement("a");
       card.href = `anuncio.html?id=${ad.id}`;
@@ -82,7 +84,7 @@ async function carregarAds() {
     myAds.forEach((ad) => {
       const image = !ad.imagem
         ? "/img/no_image.png"
-        : `https://localhost:7155${ad.imagem}`;
+        : `data:image/*;base64,${ad.imagem}`;
 
       const card = document.createElement("a");
       card.href = `meu-anuncio.html?id=${ad.id}`;

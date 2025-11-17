@@ -54,7 +54,7 @@ async function carregarAd(ad) {
 
   const image = !ad.imagem
     ? "/img/no_image.png"
-    : `https://localhost:7155${ad.imagem}`;
+    : `data:image/*;base64,${ad.imagem}`;
 
   document.getElementById("item-nome").textContent = ad.titulo;
   document.getElementById("item-status").textContent = status[ad.status];
