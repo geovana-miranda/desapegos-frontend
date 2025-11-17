@@ -1,1 +1,1 @@
-export const URL_BASE = "https://desapegosapi20251111205512-daa0aff4hebsbpav.canadacentral-01.azurewebsites.net/";
+export const URL_BASE = "https://desapegos-api-h2g9b7djbwccedh5.canadacentral-01.azurewebsites.net/api";
